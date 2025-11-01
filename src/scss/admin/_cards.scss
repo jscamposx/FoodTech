@@ -1,0 +1,334 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.cards {
+  margin-top: 2rem;
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0rem 5vw;
+  padding: 0;
+  list-style-type: none;
+  transition: 0.5s;
+
+  @include m.tablet {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.3fr));
+  }
+
+}
+
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: 3rem;
+  height: 100%;
+  border-radius: calc(40 * 1px);
+  overflow: hidden;
+  text-decoration: none;
+  width: 30rem;
+  height: 35rem;
+  gap: 5rem;
+  color: v.$kale;
+}
+
+
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-radius: calc(40 * 1px);
+  background-color: v.$blanco;
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  padding-bottom: 2.6rem;
+  border-radius: calc(40 * 1px) 0 0 0;
+  background-color: v.$blanco;
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 99%;
+  right: 0;
+  z-index: 100;
+
+  path {
+    fill: v.$blanco;
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 45 Z");
+  }
+}
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: v.$kale;
+}
+
+.card__status {
+  font-size: .8em;
+
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: v.$kale;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 1.5rem;
+}
+
+
+
+.contenedor_boton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  margin-right: 2.5rem;
+  position: absolute;
+  background-color: v.$color1;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+
+  path {
+    fill: white;
+  }
+}
+
+.delete-button {
+  &:hover {
+    width: 90px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+
+    .delete-svgIcon {
+      transition-duration: 0.3s;
+    }
+  }
+
+  &::before {
+    display: none;
+    content: "Eliminar";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+  }
+
+  &:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+  }
+}
+
+.editar-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(69, 97, 255);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+  position: absolute;
+}
+
+.editar-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+
+  path {
+    fill: white;
+  }
+}
+
+.editar-button {
+  &:hover {
+    width: 90px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(69, 97, 255);
+    align-items: center;
+
+    .editar-svgIcon {
+      transition-duration: 0.3s;
+    }
+  }
+
+  &::before {
+    display: none;
+    content: "Editar";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+  }
+
+  &:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+  }
+}
+
+
+.card-swiper,
+.card-swiper-bebidas,
+.card-swiper-otros {
+  border-radius: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+
+
+  &__head {
+
+    &--img {
+      border-top-right-radius: 2.6rem;
+      border-top-left-radius: 2.6rem;
+      height: 10rem;
+      width: 100%;
+      object-fit: cover;
+    }
+
+
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--tittle {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 1.8rem;
+
+    }
+
+    &--tittle1 {
+      text-align: center;
+      margin-top: 6.5rem;
+      margin-bottom: 6.5rem;
+      font-size: 1.8rem;
+
+    }
+  }
+
+
+
+
+}
+
+
+.selected {
+
+
+  border-radius: 3rem;
+  font-weight: v.$bold;
+  border: 4px solid;
+  border-color: v.$color1;
+  transition: 0.5s;
+}
+
+.swiper-container-css {
+  width: 100%;
+  height: 16.8rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+}
+
+.swiper-slide-css {
+  height: 15.8rem !important;
+}
+
+.swiper-css{
+
+  height: 100%;
+}
+
+.swiper-wrapper-css {
+  position: absolute !important;
+  max-width: 100%;
+
+}
+
+.swiper-button-next-css {
+  color: v.$color1 !important;
+  font-weight: bold;
+
+  @include m.telefonomx {
+    display: none !important;
+  }
+}
+
+.swiper-button-prev-css {
+  color: v.$color1 !important;
+  font-weight: bold;
+
+  @include m.telefonomx {
+    display: none !important;
+  }
+}

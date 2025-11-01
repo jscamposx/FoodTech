@@ -1,0 +1,12 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.pop-alerta{
+    border-radius: 1rem ;
+
+    &__button{
+        background-color: v.$color1 !important;
+        
+    }
+}

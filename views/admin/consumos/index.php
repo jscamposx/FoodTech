@@ -1,0 +1,1 @@
+<h2 class="dashboard__head"><?php echo $titulo; ?></h2>

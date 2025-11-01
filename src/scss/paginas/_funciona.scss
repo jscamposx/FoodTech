@@ -1,0 +1,418 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.funciona {
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+  
+
+    &__main {
+        width: min(95%, 130rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: v.$kale;
+
+
+        & h1 {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+            font-size: 5.2rem;
+
+            @include m.desktopmx {
+                width: 100%;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                font-size: 3.4rem;
+            }
+        }
+
+        & h2 {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            padding-top: 7rem;
+            padding-bottom: 4rem;
+            font-size: 3.6rem;
+            font-weight: bold;
+            @include m.desktopmx {
+                width: 100%;
+              
+                font-size: 2.4rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    }
+
+    &__contenedor {
+        display: flex;
+    
+        overflow: hidden;
+        background-color: v.$blanco;
+        border-radius: 6rem;
+        padding-bottom: 4rem;
+
+        @include m.desktopmx {
+            flex-wrap: wrap;
+        }
+
+
+
+        &__padl {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            flex-shrink: 0;
+            padding-top: 8rem;
+            padding-left: 8rem;
+            padding-right: 1.6rem;
+
+            @include m.desktopmx {
+                padding-top: 4rem;
+                padding-left: 2.4rem;
+                padding-right: 2.4rem;
+                width: 100%;
+                padding-bottom: 8rem;
+                order: 1;
+            }
+
+            @include m.telefonomx {
+                padding-bottom: 0rem;
+            }
+
+
+            &--tittle {
+
+                margin-bottom: 1.6rem;
+
+
+
+
+                & h3 {
+                    margin: 0;
+                    font-size: 3.6rem;
+                    font-weight: 900;
+                    line-height: 120%;
+
+                    @include m.desktopmx {
+                        font-size: 2.4rem;
+                    }
+
+
+                }
+            }
+
+            &--txt {
+                padding-right: 4rem;
+                margin-bottom: 1.6rem;
+
+
+                @include m.telefonomx {
+                    padding-right: 0rem;
+                }
+
+                & p {
+                    margin: 0;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    line-height: 2.4rem;
+
+                    @include m.desktopmx {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+
+        &__padr {
+            width: 50%;
+            flex-shrink: 0;
+
+            margin-left: 6rem;
+            margin-top: -25rem;
+
+            @include m.desktopmx {
+                margin-bottom: -70%;
+                margin-left: 0;
+                margin-top: 5rem;
+                order: 2;
+                width: 100%;
+                -webkit-transform: translateX(-1rem);
+                transform: translateX(-1rem);
+            }
+
+            &--img {
+
+                border-radius: 18rem;
+                -webkit-transform: rotate(10deg);
+                transform: rotate(10deg);
+
+                @include m.desktopmx {
+                    border-radius: 5rem;
+                    height: auto;
+                    width: calc(100% + 8rem);
+
+                }
+
+            }
+        }
+    }
+
+
+    &__contenedora {
+        width: 100%;
+        margin: auto;
+
+
+
+        &--tittle {
+            font-size: 3.6rem;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+
+            margin-bottom: 4rem;
+
+            @include m.desktopmx {
+                font-size: 2.4rem;
+            }
+        }
+
+
+        &--pad {
+            display: flex;
+            flex-direction: column;
+            padding: 2.4rem 4rem;
+            background-color: v.$blanco;
+            border-radius: 3rem;
+            margin-top: 1.5rem;
+
+            @include m.desktopmx{
+                margin-top: 1.5rem;
+                padding: 2rem 2rem;
+            }
+        }
+
+        &--padQ {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 1.2rem;
+            
+
+
+            & button {
+                background: none;
+                border: none;
+                border-radius: 1.2rem;
+                padding: 0.6rem;
+                cursor: pointer;
+            }
+
+            & h5 {
+                font-size: 2rem;
+                font-weight: 500;
+                margin: 0;
+                line-height: 120%;
+
+                @include m.desktopmx {
+
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        &--padP {
+            display: none;
+            margin-top: 2.2rem;
+            padding: 0 10rem 0 0;
+            background-color: v.$blanco;
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 2.4rem;
+
+            @include m.desktopmx {
+                padding: 0rem;
+                font-size: 1.6rem;
+            }
+
+            & p {
+                margin-top: 0;
+                margin-bottom: 2.4rem;
+            }
+
+            &--active {
+                display: block;
+
+            }
+
+
+        }
+
+
+    }
+
+    &__contenedorb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+        text-align: center;
+        width: 66.666%;
+        margin: auto;
+
+
+       
+        @include m.desktopmx {
+            width: 100%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        
+        }
+
+        &--tittle {
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            font-size: 3.6rem;
+            font-weight: 700;
+            line-height: 120%;
+            margin-bottom: 4rem;
+
+            @include m.desktopmx {
+                font-size: 2.4rem;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+          
+        }
+
+        &--txt {
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            font-size: 2.2rem;
+            font-weight: 400;
+            line-height: 2.9rem;
+            margin-bottom: 3rem;
+
+            @include m.desktopmx {
+                font-size: 2rem;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            @include m.telefonomx{
+                max-height: 29rem;
+                overflow-y: hidden;
+            }
+        }
+    }
+
+
+
+    &__contenedorc {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: transparent;
+        gap: 2rem;
+
+
+
+        &--pad {
+            width: 41.666%;
+            border-radius: 6rem;
+            padding: 4rem;
+            background-color: v.$blanco;
+            text-align: center;
+            min-height: 56rem;
+
+
+            @include m.desktopmx {
+                width: 100%;
+                border-radius: 3rem;
+                min-height: 40.8rem;
+                max-width: 53rem;
+                padding: 3.2rem;
+            }
+        }
+
+        &--tittle {
+            & h4 {
+                font-size: 2.8rem;
+                font-weight: 700;
+                line-height: normal;
+                margin-bottom: 2.4rem;
+                margin-top: 0rem;
+
+                @include m.desktopmx {
+                    font-size: 2rem;
+
+                }
+            }
+        }
+
+        &--txt {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+
+            & p {
+                margin-top: 0rem;
+            }
+
+            @include m.desktopmx {
+                font-size: 1.4rem;
+                line-height: 2.3rem;
+
+            }
+        }
+
+        &--img {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+
+
+            @include m.desktopmx {
+                margin-bottom: 2.4rem;
+
+            }
+
+            & img {
+                width: 18rem;
+                height: 18rem;
+
+                @include m.desktopmx {
+                    width: 14rem;
+                    height: 14rem;
+                }
+            }
+        }
+    }
+}
+
+.color1 {
+    color: v.$color1;
+    margin-top: 1rem;
+    margin-bottom: 4.2rem;
+}
+
+.justifycontent-center {
+    justify-content: center !important;
+
+
+    & button {
+        width: 20rem !important;
+    }
+}

@@ -1,0 +1,351 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.footer{
+  &__principal{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: min(95%, 130rem);
+
+  }
+
+ &__map{
+  height: 30rem;
+  margin-top: 1.5rem;
+  
+
+  @include m.desktopmx{
+    height: 15rem;
+  }
+ }
+
+  &__contenedor{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+ 
+    @include m.desktop{
+      flex-direction: row;
+      
+     }
+  }
+
+  &__servicios{
+    width: 100%;
+  
+
+    @include m.desktop{
+     
+      width: 83.333%;
+     }
+  
+
+    &__pad{
+      background-color: v.$light-cream;
+      border-radius: 3rem;
+      padding: 2rem;
+    
+
+      @include m.desktop{
+        padding-left: 8rem;
+        padding-right: 8rem;
+        padding-top: 4rem;
+        padding-bottom: 3.6rem;
+       
+       }
+     
+    }
+
+    &--main{
+      flex-grow: 1;
+      margin-bottom: 2.4rem;
+      padding-right: 1.4rem;
+      width: 50%;
+
+      @include m.desktop{
+       width: auto;
+       }
+    }
+
+    &--top h2{
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+      color: #383a33;
+      font-size: 1.6rem;
+
+      @include m.desktop{
+      
+        font-size: 1.8rem;
+        
+       }
+    }
+
+    &--bot{
+      display: flex;
+      gap: 0rem;
+      flex-direction: column;
+
+
+      @include m.desktop{
+        flex-direction: row;
+        gap: 4rem;
+       
+       }
+    }
+
+   &__secciones{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include m.desktop{
+      flex-grow: 1;
+     
+     }
+   }
+
+    &__secciones li{
+      list-style-type: none;
+      line-height: 2;
+      font-size: 1.2rem;
+      color: #383a33;
+      font-weight: 400;
+
+      @include m.desktop{
+        font-size: 1.4rem;
+        line-height: 2.5;
+       
+       }
+    }
+
+    &__secciones a{
+      text-decoration: none;
+      color: v.$gris-oscuro;
+      font-weight: 300;
+    }
+
+    &__secciones ul{
+      padding: 0;
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+
+  &__redes{
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1.6rem;
+
+    @include m.desktop{
+      flex-direction: column;
+      width: 16.666%;
+      gap: 0;
+      margin-top: 0;
+      padding-left: 1.6rem;
+      
+     }
+  
+    &__imagen{
+      display: flex;
+      justify-content: center;
+      background-color: v.$light-cream;
+      border-radius: 3rem;
+      padding: 1.6rem;
+      margin-bottom: 0;
+
+
+      & svg {
+        max-width: 12.5rem;
+        max-height: 12.5rem;
+
+        @include m.desktopmx{
+          max-width: 8rem;
+          max-height: 8rem;
+        }
+      }
+
+
+      @include m.desktop{
+        margin-bottom: 1.6rem;
+       }
+
+      &--img{
+        max-width: 3.5rem;
+
+
+        @include m.desktop{
+          max-width: 12rem;
+         }
+        
+      }
+     
+     
+    
+    }
+
+    &__contenedor--botones{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: v.$light-cream;
+      flex-grow: 1;
+      border-radius: 3rem;
+      padding: 1.6rem;
+      gap: 1rem;
+      
+
+      @include m.desktop{
+        flex-grow: 0;
+        gap: 0;
+        justify-content: space-evenly;
+       
+       }
+    }
+
+    &__botones{     
+    border-radius: 10rem;
+    background-size: cover; 
+    height: 3.2rem;
+    width: 3.2rem;
+    border: none;
+
+      &__boton1{
+     
+        background-image: url('/img/footer/facebook_icon.avif');
+      
+   }
+
+      &__boton2{
+      
+        background-image: url('/img/footer/twitter_icon.avif');
+      }
+
+      &__boton3{
+       
+        background-image: url('/img/footer/instagram_icon.avif');
+      }
+    }
+  }
+
+
+  &__final{
+   
+
+    
+    &__pagos{
+      display: flex;
+      flex-direction: row;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+   
+    }
+
+   
+    
+      margin-top: 2rem;
+
+      &__contenedor{
+        background-color: v.$light-cream;
+        border-radius: 2rem;
+        padding: 16px 16px 16px 25px;
+        
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+ 
+        @include m.desktop{
+        padding-left: 4rem;
+        padding-right: 4rem;
+        align-items: center;
+        flex-direction: row;
+      }
+
+     
+      }
+
+      &__contenedor ul{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        @include m.desktop{
+          align-items: center;
+          flex-direction: row;
+        }
+      }
+
+      &__contenedor li{
+        margin-right: 2rem;
+        line-height: 2;
+        font-size: 1.3rem;
+        font-weight: v.$regular;
+        
+
+        @include m.desktop{
+          line-height: 2.5;
+          font-size: 1.5rem;
+        }
+
+      
+       
+      }
+
+    &__contenedor a{
+      color: v.$negro;
+      font-size: 1.2rem;
+    }
+
+    &__contenedor nav{
+      margin-bottom: 2rem;
+
+      @include m.desktop{
+        margin-bottom: 0rem;
+      }
+    }
+
+ 
+
+    &__espacio{
+      height: 4rem;
+    }
+  }
+
+  
+
+}
+
+.Ocultar{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+#iframeboxing {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3rem;
+  background: url('/img/footer/maps.avif') center/cover no-repeat; 
+}
+
+
+.hidden {
+  visibility: hidden;
+}

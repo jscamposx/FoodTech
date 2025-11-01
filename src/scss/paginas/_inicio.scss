@@ -1,0 +1,102 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.inicio {
+
+
+
+    &__contenedor {
+      
+        width: 100%;
+        background-color: v.$blanco;
+        
+        overflow: hidden;
+     
+    }
+
+    &__contenedor1 {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: min(95%, 130rem);
+        background-color: v.$blanco;
+        padding-top: 3rem;
+       padding-bottom: 4rem;
+        
+        @include m.desktopmx {
+            flex-wrap: wrap;
+        }
+    }
+
+    
+
+    &__padMain {
+        width: min(95%, 130rem);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+
+        &__right {
+            width: 50%;
+            @include m.desktopmx{
+                width: calc(100% + 8rem);
+            }
+
+       
+        }
+
+        &__left {
+            width: 50%;
+            @include m.desktopmx{
+                width: calc(100% + 8rem); 
+                display: flex;
+                justify-content: center;
+            }
+
+            &--imgfront {
+                z-index: 1;
+                position: absolute;
+                transform: translateX(-75%);
+                transition: .1s;
+                
+
+
+
+                & img {
+                    max-width: 60rem;
+                    max-height: 60rem;
+                  
+                    transform: rotate(10deg);
+                    -webkit-transform: rotate(10deg);
+                  
+                }
+            }
+
+            &--imgback {
+
+                & img {
+                    max-width: 60rem;
+                    max-height: 56rem;
+                    transform: rotate(10deg);
+                    -webkit-transform: rotate(10deg);
+
+                }
+
+            }
+
+
+        }
+    }
+}
+
+.topmargin{
+    margin-top: -15rem;
+
+    @include m.desktopmx{
+        margin-top: 0rem;
+    }
+}

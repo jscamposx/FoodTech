@@ -1,0 +1,31 @@
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>
+# Brotoli compression for text files: HTML, CSS, JS, TEXT, XML, FONTS
+
+<IfModule mod_brotli.c>
+    # Habilitar la compresión Brotli
+    AddOutputFilterByType BROTLI_COMPRESS text/plain
+    AddOutputFilterByType BROTLI_COMPRESS text/html
+    AddOutputFilterByType BROTLI_COMPRESS text/xml
+    AddOutputFilterByType BROTLI_COMPRESS text/css
+    AddOutputFilterByType BROTLI_COMPRESS application/xml
+    AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+
+    # Excluir ciertos navegadores antiguos que tienen problemas con la compresión
+    BrowserMatch ^Mozilla/4 no-brotli
+    BrowserMatch \bMSIE no-brotli
+
+    # Añadir encabezados de respuesta para indicar que se está utilizando Brotli
+    AddOutputFilter BROTLI_COMPRESS .css .html .js .svg .xml
+</IfModule>

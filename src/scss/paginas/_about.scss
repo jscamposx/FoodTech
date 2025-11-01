@@ -1,0 +1,240 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.about {
+  
+    width: min(95%, 130rem);
+
+    margin-left: auto;
+    margin-right: auto;
+    &__contenedor {
+        color: v.$kale;
+        display: flex;
+        justify-content: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        width: 100%;
+        
+        
+        @include m.telefonomx {
+            padding-bottom: 2rem;
+          
+        }
+        &--pad {
+            background-color: v.$blanco;
+            position: relative;
+            text-align: center;
+          
+            border-radius: 6rem;
+            padding-left: 8rem;
+            padding-right: 8rem;
+            padding-bottom: 4rem;
+            padding-top: 4rem;
+            width: min(83%, 110rem);
+
+            @include m.desktopmx {
+                width: min(95%);
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+
+            @include m.telefonomx {
+                border-radius: 3rem;
+            }
+           
+        }
+
+        &--padh{
+            width: 33%;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            
+            
+        }
+
+        &--padm{
+            display: flex;
+            
+            text-align: center;
+
+
+            @include m.telefonomx{
+                max-height: 50rem;
+            }
+        }
+
+        &--padf{     
+            background-color: v.$blanco;
+            position: relative;
+            text-align: center;
+            border-radius: 6rem;
+            width: min(95%, 130rem);
+            max-height: 72rem;
+         
+        
+            @include m.desktopmx {
+                width: min(95%);
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+         
+      &--img{
+     
+        border-radius: 6rem;
+        width: 100%;
+        height: 100%;
+      }
+        }
+
+        &--img {
+            width: 18rem;
+            height: 18rem;
+        }
+        &--imgpad{
+        border-radius: 6rem;
+        max-width: 35rem;
+        width: 100%;
+
+        @include m.telefonomx{
+            max-width: 25rem; 
+            max-height: 25rem;
+        }
+   
+        }
+
+        &--info {
+            line-height: 2.4rem;
+            
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            font-size: 1.6rem;
+
+           
+        }
+
+        &--txt{
+            margin-top: 3rem;
+            @include m.telefonomx{
+                font-size: 1.4rem;  
+            }
+        }
+
+      
+
+        &--subtittle {
+            margin-top: 3rem;
+            @include m.telefonomx{
+                font-size: 1.4rem;  
+            }
+        }
+
+        &--tittle{
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+
+
+            & p {
+                margin-top: 0;
+            }
+
+            @include m.telefonomx{
+                font-size: 24px;  
+            }
+        }
+    }
+}
+
+.background-transparent{
+    background-color: transparent;
+}
+
+.font-size56px{
+    font-size: 56px;
+
+    @include m.desktopmx{
+        font-size: 42px;    
+    }
+}
+
+
+.font-size56px1{
+    font-size: 56px;
+    font-weight: bolder;
+    @include m.desktopmx{
+        font-size: 32px;  
+ 
+    }
+
+    @include m.telefonomx{
+        font-size: 24px;  
+    }
+}
+.font-size36px{
+    font-size: 36px;
+    font-weight: bold;
+
+    @include m.desktopmx{
+        font-size: 24px;    
+    }
+
+    @include m.telefonomx{
+        display: none;
+    }
+}
+
+.font-size22px{
+    font-size: 22px;
+   
+    @include m.desktopmx{
+        font-size: 20px;    
+    }
+
+    @include m.telefonomx{
+        font-size: 14px;  
+    }
+}
+
+.padding0px{
+    padding-top: 0;
+}
+
+.rotater{
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+
+    @include m.desktopmx{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.rotatel{
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+    @include m.desktopmx{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.padding-top14rem{
+    padding-top: 14rem;
+
+    @include m.desktopmx{
+        padding-top: 0rem;
+    }
+}
+
+.margin12rem{
+    margin-top: 8rem;
+}
+
+.margin7rem{
+    margin-top: 13.5rem;
+
+    @include m.desktopmx{
+        margin-top: 5.5rem;
+    }
+}

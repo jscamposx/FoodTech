@@ -1,0 +1,156 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.sidebar {
+    &__container {
+        position: relative;
+        width: 100%;
+    }
+
+    &__navigation {
+        position: fixed;
+        width: 8rem;
+     
+        height: 100%;
+        background-color: v.$color1;
+        border-left: 10px solid v.$color1;
+        transition: 0.5s;
+        overflow: hidden;
+  
+
+
+        @include m.desktopmx{
+            left: -30%;
+        }
+
+        @include m.telefonomx{
+            width: 100%;
+            left: -100%;
+            z-index: 1000;
+        }
+
+        ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin-top: 0;
+            padding-left: 0;
+
+            li {
+                position: relative;
+                width: 100%;
+                list-style: none;
+                border-top-left-radius: 3rem;
+                border-bottom-left-radius: 3rem;
+
+                &:hover,
+                &.hovered {
+                    background-color: v.$blanco;
+
+                    a {
+                        color: v.$color1;
+                    }
+                }
+
+                &:nth-child(1) {
+                    margin-bottom: 40px;
+                    pointer-events: none;
+                }
+
+                a, &.hovered {
+                    width: 100%;
+                    display: flex;
+                    text-decoration: none;
+                    color: v.$blanco;
+
+                    &:hover {
+                        color: v.$color1;
+                    }
+                }
+            }
+        }
+
+
+        &--active{
+            width: 30rem;
+            
+
+            @include m.desktopmx{
+                width: 30rem;
+                left: 0;
+            }
+
+            @include m.telefonomx{
+                width:100%;
+                overflow-x: hidden;
+                left: 0;
+               
+            }
+        }
+    }
+
+    &__icon {
+        min-width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+
+        fill: v.$blanco;
+    }
+
+    &__tittle {
+        padding: 0 0 0 1rem;
+        height: 60px;
+        line-height: 60px;
+        text-align: start;
+        white-space: nowrap;
+    }
+
+    &__navigation ul li:hover a::before,
+    &__navigation ul li.hovered a::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &__navigation ul li:hover a::before {
+        top: -50px;
+        box-shadow: 35px 35px 0 10px v.$blanco;
+    }
+
+    &__navigation ul li.hovered a::before {
+        top: -50px;
+        box-shadow: 35px 35px 0 10px v.$blanco;
+    }
+
+    &__navigation ul li:hover a::after,
+    &__navigation ul li.hovered a::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &__navigation ul li:hover a::after {
+        box-shadow: 35px -35px 0 10px v.$blanco;
+    }
+
+    &__navigation ul li.hovered a::after {
+        box-shadow: 35px -35px 0 10px v.$blanco;
+    }
+
+
+   
+ 
+}

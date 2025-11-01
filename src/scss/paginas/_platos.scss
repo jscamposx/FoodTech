@@ -1,0 +1,239 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+.fix-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+
+.platos {
+
+
+  
+
+    &__main {
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: min(95%, 130rem);
+        color: v.$kale;
+    }
+
+    &__contenedor {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2.4rem;
+        row-gap: 4rem;
+        width: 100%;
+        height: 100%;
+
+        @include m.desktopmx {
+
+            grid-template-columns: 1fr;
+            grid-gap: 0.8rem;
+            gap: 1.2rem;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        min-height: 40.3rem;
+        background-color: v.$blanco;
+        border-radius: 3rem;
+
+        @include m.desktopmx {
+            flex-direction: row;
+            min-height: 14rem;
+        }
+
+        @include m.telefonomx{
+           
+            min-height: 12rem;
+        }
+
+        &--cimg {
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            object-fit: cover;
+            height: 24.3rem;
+            display: flex;
+            align-items: flex-end;
+
+            @include m.desktopmx {
+               
+                max-width: 15rem;
+                max-height: 15rem;
+            }
+
+            @include m.telefonomx{
+                max-width: 12rem;
+                max-height: 12rem;
+            }
+
+        }
+
+        &--img {
+            border-radius: 3rem;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+
+            @include m.desktopmx {
+
+                border-top-left-radius: 3rem;
+                border-bottom-left-radius: 3rem;
+                border-top-right-radius: 0rem;
+                border-bottom-right-radius: 0rem;
+            }
+        }
+
+        &--txt {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+            padding: 1.6rem 1.4rem 1.2rem;
+            font-size: 1.8rem;
+       
+            
+            @include m.desktopmx {
+                justify-content: flex-start;
+                padding: 1rem 1rem 1rem;
+            }
+            @include m.telefonomx{
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+
+
+            & p {
+                margin-top: 0;
+                margin-bottom: 0;
+                display: block;
+              
+                overflow: hidden;
+                
+                max-height: 10rem;
+                max-width: 26rem;
+                @include m.telefonomx{
+                    display: none;
+                }
+            }
+        }
+
+        &--tittle {
+            display: none;
+            width: 100%;
+            font-size: 1.8rem;
+          
+            @include m.desktopmx {
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+               
+                display: block;
+            }
+
+            @include m.telefonomx{
+                font-size: 1.6rem;
+            }
+        }
+
+        &--span {
+            display: static;
+            margin-bottom: 1.8rem;
+            margin-left: 1.6rem;
+            background-color: #17330cca;
+            color: #fff;
+            position: absolute;
+            padding: 0.6rem 0.6rem 0.6rem;
+            border-radius: 0.8rem;
+
+            @include m.desktopmx {
+                display: none;
+            }
+
+            
+
+        }
+
+        &--foot {
+            border-radius: 3rem;
+            padding: 1.2rem 1.6rem 1.6rem;
+            transition: .4s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+
+            @include m.desktopmx {
+                justify-content: flex-start;
+                padding: 0.6rem 0.4rem 0.2rem;
+                justify-content: flex-end;  
+                width: 4rem;
+            }
+
+            & p {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        &--btn {
+            border: none;
+            background-color: transparent;
+            width: 5rem;
+            height: 5rem;
+            color: #17330c;
+
+            &:hover {
+              
+                cursor: pointer;
+             
+            }
+        }
+
+
+    }
+
+}
+
+
+.fontsize28px {
+    font-size: 2.8rem;
+}
+
+
+.highlight {
+    animation: highlightAnimation 1.25s ease-in-out;
+    
+}
+
+@keyframes highlightAnimation {
+    0% {
+        background-color: #9c9d99;
+        
+    }
+    100% {
+        background-color: rgb(255, 255, 255);
+        
+    }
+}

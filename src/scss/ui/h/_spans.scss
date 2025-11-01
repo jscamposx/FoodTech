@@ -1,0 +1,25 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.stars{
+
+    font-size: 25px !important;
+
+  
+  }
+
+
+
+  .circulos{
+    font-size: 1.9rem !important;
+            
+     
+    margin-right: 0.5rem;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+ 
+  }
+

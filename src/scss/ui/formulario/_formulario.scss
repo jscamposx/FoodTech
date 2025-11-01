@@ -1,0 +1,277 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.formulario{
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   margin-bottom: 1rem;
+   &__fieldset {
+  
+       border: none;
+       margin-top: 3rem;
+       padding: 0;
+     
+    }
+    
+   &__legend {
+       color: v.$gris;
+       font-size: 2.2rem;
+       margin-bottom: 2rem;
+       
+   }
+
+   &__campo {
+       display: flex;
+       flex-direction: column;
+       gap: 1rem;
+       margin: 1.5rem 0;
+      
+        &__counter{
+            display: flex;
+         
+            align-items: center;
+
+            &--input{
+                pointer-events: none;
+                margin-left: 0.5rem;
+                margin-bottom: 1.5rem;
+                border: none;
+                color: #64748B;
+                width: 4rem;
+            }
+        }
+     
+       
+   }
+
+   &__input,
+   &__select,
+   &__txtarea {
+       padding: 1rem;
+       border: 1px solid darken(v.$gris-claro, 20);
+       border-radius: .5rem;
+       width: 100%;
+       resize: none;
+       &--file {
+           border: none;
+       }
+       &--sociales {
+           @extend .formulario__input;
+           flex: 1;
+           border-top-left-radius: 0;
+           border-bottom-left-radius: 0;
+       }
+
+      
+   }
+
+   &__texto{
+    margin-top: 3rem;
+   }
+
+   &__imagen{
+    display: flex;
+    align-items: center;
+    
+    
+    &--table{
+        max-width: 10rem;
+        max-height: 10rem;
+        border-radius: 3rem
+    }
+    
+    &--formulario{
+      max-width: 20rem;
+      max-height: 20rem;
+      border-radius: 3rem;
+    }
+   }
+   &__listado{
+      @include m.tags;
+    
+    
+   }
+
+     &__submit {
+      @include m.boton(v.$color1, v.$blanco);
+      width: 100%;
+      align-self: center;
+
+
+      @include m.telefono{
+        align-self: flex-start;
+        width: auto;
+      }
+
+      &--registrar,
+      &--full {
+          width: 100%;
+          @extend .formulario__submit
+      }
+  }
+
+  &__filter{
+  display: flex;
+  gap: 0.5rem;
+  
+
+  @include m.telefonomx{
+    flex-wrap: wrap;
+    
+  }
+    &--button{
+        
+        background-color: #F23545;
+        padding: 1rem;
+        color: #FFFFFF;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border: none;
+        transition-property: background-color;
+        transition-duration: 0.3s;
+        text-align: center;
+        display: inline-block;
+        border-radius: 1rem;
+
+        @include m.telefonomx{
+            margin-bottom: 1rem;
+        }
+
+        &:hover{
+            background-color: v.$blanco;
+            color: v.$color1;
+            border: 1px solid v.$color1;
+        }
+
+        &--selected{
+            background-color: v.$blanco;
+            color: v.$color1;
+            border: 1px solid v.$color1;
+          
+        }
+    }
+  }
+
+  &__search{
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+
+    &--selected, &:hover {
+        background-color: v.$blanco;
+       
+      
+        .formulario__search--pad {
+          background-color: v.$blanco;
+          border: 1px solid v.$color1;
+      
+          .formulario__search--InputOtros,
+          .formulario__search--InputBebidas,
+          .formulario__search--InputPlatillos {
+            color: rgba(v.$color1, 1);
+      
+            &::placeholder {
+              color: v.$color1;
+            }
+          }
+        }
+      
+        .search_icon {
+          fill: v.$color1;
+        }
+      }
+  
+    &--pad {
+      box-sizing: border-box;
+      position: relative;
+      width: 130px;
+      height: 36px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: v.$color1;
+      transition: all 0.3s ease;
+    }
+      &--checkbox:focus {
+        border: none;
+        outline: none;
+      }
+  
+      &--checkbox:checked {
+        right: 10px;
+
+        
+      
+        & ~ .formulario__search--pad {
+          width: 40px;
+      
+          & .formulario__search--InputOtros,
+          & .formulario__search--InputBebidas,
+          & .formulario__search--InputPlatillos {
+            width: 0;
+            height: 0px;
+          }
+      
+          & .formulario__search--icon {
+            padding-right: 8px;
+          }
+
+          
+        }
+      }
+  
+      &--checkbox {
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 17px;
+        top: 10px;
+        z-index: 9;
+        cursor: pointer;
+        appearance: none;
+
+       
+      }
+  
+      &--InputOtros,
+      &--InputBebidas,
+      &--InputPlatillos {
+        box-sizing: border-box;
+        height: 100%;
+        width: 80px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding-bottom: 4px;
+        font-weight: bold;
+        padding-left: 5px;
+        font-size: 16px;
+        color: v.$blanco;
+        transition: all 0.3s ease;
+  
+        &::placeholder {
+          color: v.$blanco;
+        }
+      }
+  
+      &--icon {
+        box-sizing: border-box;
+        padding-top: 5px;
+        width: fit-content;
+        transition: all 0.3s ease;
+      }
+  }
+ 
+
+}
+
+.search_icon {
+  box-sizing: border-box;
+  fill: white;
+  font-size: 1.3em;
+}
