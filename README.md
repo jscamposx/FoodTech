@@ -1,87 +1,109 @@
-# Yola - Aplicación Web de Restaurante
+# 🍽️🔥 FoodTech — Aplicación Web Completa para Restaurantes
 
-Yola es una aplicación web completa para la gestión de restaurantes, permitiendo administrar platillos, eventos y usuarios, así como ofrecer una experiencia pública para clientes con información general del restaurante.
+<div align="center">
 
-## Tecnologías Utilizadas
+**Sistema profesional para la gestión de restaurantes**, construido con PHP, MySQL, JavaScript moderno y un entorno de desarrollo optimizado.
+Incluye **área pública para clientes**, **panel administrativo**, **manejo de platillos**, **eventos**, **usuarios**, y utilidades avanzadas como procesamiento de imágenes y envío de correos.
 
-### Backend
+</div>
 
-* **PHP**: Lenguaje principal.
-* **MySQL**: Sistema de gestión de bases de datos.
-* **Patrón MVC**: Implementación nativa del patrón Modelo-Vista-Controlador.
-* **Active Record**: Implementación personalizada para la manipulación de datos.
-* **Composer**: Gestión de dependencias.
-* **phpmailer/phpmailer**: Envío de correos electrónicos.
-* **intervention/image**: Procesamiento y optimización de imágenes.
-* **vlucas/phpdotenv**: Manejo de variables de entorno.
+---
 
-### Frontend
+## ✨ ¿Qué es Yola?
+
+**Yola** es una aplicación web integral diseñada para cubrir las necesidades operativas de un restaurante: mostrar el menú, gestionar eventos, administrar usuarios, enviar correos automáticos y ofrecer una experiencia pública clara y moderna.
+
+Su arquitectura está basada en **MVC nativo**, con una implementación personalizada de **Active Record**, lo que permite un código limpio, escalable y organizado.
+
+---
+
+# 🧪 Tecnologías Utilizadas
+
+## 🔧 Backend
+
+* **PHP** — Lenguaje principal de la aplicación.
+* **MySQL** — Base de datos relacional.
+* **MVC nativo** — Arquitectura modular y mantenible.
+* **Active Record** — Implementación personalizada para interactuar con los modelos.
+* **Composer** — Gestión de dependencias.
+* **PHPMailer** — Envío de correos (confirmación y recuperación).
+* **Intervention/Image** — Redimensionamiento y optimización de imágenes.
+* **vlucas/phpdotenv** — Variables de entorno seguras.
+
+## 🎨 Frontend
 
 * **JavaScript (ES6+)**
 * **SASS (SCSS)**
-* **Gulp** para compilación, minificación y optimización.
-* **Node.js (npm)** para gestión de paquetes.
+* **Gulp** — Compilación, minificación y optimización.
+* **Node.js + npm** — Gestión de paquetes.
 
-## Estructura del Proyecto
+---
 
-```
+# 📂 Estructura del Proyecto
+
+```txt
 Yola/
-├── classes/                # Clases auxiliares
-├── controllers/            # Controladores
-├── includes/               # Configuración y entorno
-├── models/                 # Modelos y ActiveRecord
-├── public/                 # Punto de entrada y assets
-│   ├── build/              # Archivos compilados
+├── classes/                # Clases auxiliares y helpers
+├── controllers/            # Controladores MVC
+├── includes/               # Configuración general y entorno
+├── models/                 # Modelos + ActiveRecord
+├── public/                 # Punto de entrada / assets
+│   ├── build/              # Archivos compilados del frontend
 │   └── img/                # Imágenes optimizadas
-├── src/                    # Código fuente frontend
+├── src/                    # Código fuente del frontend
 │   ├── js/
 │   └── scss/
 ├── sql/                    # Dump de base de datos
 ├── vendor/                 # Dependencias de Composer
-├── views/                  # Plantillas y vistas
+├── views/                  # Plantillas organizadas por módulos
 │   ├── admin/
 │   ├── auth/
 │   ├── paginas/
 │   └── templates/
 ├── .htaccess
-├── Router.php
+├── Router.php              # Enrutador principal
 ├── composer.json
 ├── gulpfile.js
 └── package.json
 ```
 
-## Características
+---
 
-### Área Pública
+# 🚀 Funcionalidades Principales
+
+## 🌐 Área Pública
 
 * Registro y autenticación de usuarios.
-* Confirmación de cuenta vía correo.
-* Recuperación de contraseña mediante token.
-* Páginas informativas (Inicio, Nosotros, Menú, etc.).
-* API pública para consumo de datos de platillos.
+* Confirmación de cuenta vía email.
+* Recuperación de contraseña con token seguro.
+* Páginas informativas del restaurante (Home, Nosotros, Menú, etc.).
+* API pública para mostrar platillos.
 
-### Panel de Administración
+## 🔐 Panel Administrativo
 
-* Dashboard general.
-* CRUD completo para platillos y eventos.
-* Lista de usuarios registrados.
-* Gestión de consumos (en desarrollo).
+* Dashboard con vista general.
+* CRUD completo de **Platillos**.
+* CRUD completo de **Eventos**.
+* Gestión de **Usuarios registrados**.
+* Módulo de **Consumos** (en desarrollo).
 
-## Instalación y Configuración
+---
 
-### 1. Base de Datos
+# ⚙️ Instalación y Configuración
 
-Importar el archivo ubicado en:
+## 1️⃣ Crear Base de Datos
 
-```
+Importa el archivo SQL:
+
+```txt
 sql/restaurante_js.sql
 ```
 
-### 2. Variables de Entorno
+## 2️⃣ Variables de Entorno
 
-Editar `.env` en `includes/` con los valores correspondientes:
+Editar el archivo `.env` dentro de `includes/`:
 
-```
+```ini
 DB_HOST=localhost
 DB_USER=usuario
 DB_PASS=password
@@ -93,38 +115,51 @@ EMAIL_USER=usuario_mailtrap
 EMAIL_PASS=password_mailtrap
 ```
 
-### 3. Dependencias del Backend
+## 3️⃣ Instalar dependencias del Backend
 
-```
+```bash
 composer install
 ```
 
-### 4. Dependencias del Frontend
+## 4️⃣ Instalar dependencias del Frontend
 
-```
+```bash
 npm install
 ```
 
-### 5. Compilación de Assets
+## 5️⃣ Compilar assets
 
-```
+```bash
 npm run dev
 ```
 
-### 6. Ejecución del Servidor Local
+## 6️⃣ Iniciar servidor local
 
-```
+```bash
 php -S localhost:8000 -t public
 ```
 
-## Acceso a la Aplicación
+---
 
-Abrir en navegador:
+# 🌍 Acceso a la Aplicación
 
-```
+Abrir en el navegador:
+
+```txt
 http://localhost:8000
 ```
 
-## Licencia
+---
 
-Este proyecto se encuentra bajo licencia de uso personal y académico. Ajustar según necesidades.
+# 📜 Licencia
+
+Proyecto de uso personal y académico.
+Ajustar según los requerimientos del entorno productivo.
+
+---
+
+<div align="center">
+
+Hecho con ❤️ por **jscamposx**
+
+</div>
